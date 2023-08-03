@@ -36,6 +36,35 @@ freeleft = freeland
 troops = 90
 land = 6
 
+function generateRandomCombinations(list1, list2, numCombinations)
+  local combinations = {}
+
+  for _ = 1, numCombinations do
+    local combination = {}
+
+    for i = 1, math.max(#list1, #list2) do
+      local element1 = list1[math.random(#list1)]
+      local element2 = list2[math.random(#list2)]
+
+      table.insert(combination, element1 .. " " .. element2)
+    end
+
+    table.insert(combinations, combination)
+  end
+
+  return combinations
+end
+
+-- Example usage:
+local list1 = {"Qing", "Arama", "Selic", "Yuguhion"}
+local list2 = {"Dynasty", "Kingdom", "Republic", "Union"}
+local numCombinations = 5
+
+local randomCombinations = generateRandomCombinations(list1, list2, numCombinations)
+
+-- Map combinations to variables
+local Enemy1, Enemy2, Enemy3, Enemy4, Enemy5 = unpack(randomCombinations)
+
 function start()
   local menuOptions = {"Next round", "Stats", "Battle"}
   local chosenOption = displayMenu(menuOptions)
@@ -55,18 +84,27 @@ function start()
     print("Empty land left: " .. freeleft)
     sleep(2)
   elseif chose == "Battle" then
-    print("Attacking empty land.")
-    oldland = land
-    oldfree = freeleft
-    freeleft = freeleft - (troops / 4)
-    if freeleft < 0 then
-      land = land + oldfree
-      freeleft = 0
+    if freeleft > 0 then
+      print("Attacking empty land.")
+      oldland = land
+      oldfree = freeleft
+      freeleft = freeleft - (troops / 4)
+      if freeleft < 0 then
+        land = land + oldfree
+        freeleft = 0
+      else
+        land = land + (oldfree - freeleft) -- dont you love reverse subtraction?
+      end
+      print("Gained " .. math.abs(oldland - land) .. " square miles of land.") -- could have probably simplified this
+      sleep(2)
     else
-      land = land + (oldfree - freeleft) -- dont you love reverse subtraction?
+      print("Enemy1:", Enemy1[1])
+      print("Enemy2:", Enemy2[1])
+      print("Enemy3:", Enemy3[1])
+      print("Enemy4:", Enemy4[1])
+      print("Enemy5:", Enemy5[1])
+      sleep(4)
     end
-    print("Gained " .. math.abs(oldland - land) .. " square miles of land.") -- could have probably simplified this
-    sleep(2)
   end
 end
 
