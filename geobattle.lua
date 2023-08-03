@@ -44,10 +44,10 @@ function start()
     if land * 15 < troops then
       print("gained 0 troops (max)")
     else
-      print("gained " .. troops + (land * 5) .. " troops")
+      print("gained " .. (land * 5) .. " troops")
       troops = troops + (land * 5)
     end
-    sleep(2)
+    sleep(1)
   elseif chose == "Stats" then
     print("Troop count: " .. troops)
     print("Square miles of land: " .. land)
