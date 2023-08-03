@@ -45,17 +45,21 @@ function start()
     else
       troops = troops + (land * 5)
     end
+    sleep(2)
   elseif numchose == 2 then
     print("Troop count: " .. troops)
     print("Square miles of land: " .. land)
     print("Max troops: " .. land * 15)
     print("Empty land left: " .. freeleft)
+    sleep(2)
   elseif numchose == 3 then
     print("Attacking empty land.")
     oldfree = freeleft
     freeleft = freeleft / 2
     print("Gained " .. oldfree / 2 .. " square miles of land.")
+    sleep(2)
   end
+  print(numchose)
   sleep(2)
 end
 
