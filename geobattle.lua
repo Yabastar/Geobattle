@@ -56,11 +56,16 @@ function start()
     sleep(2)
   elseif chose == "Battle" then
     print("Attacking empty land.")
-    freeleft = freeleft / 2
-    print(land)
-    land = land + freeleft
-    print(land)
-    print("Gained " .. freeleft .. " square miles of land.")
+    oldland = land
+    oldfree = freeleft
+    freeleft = freeleft - (troops / 2)
+    if freeleft < 0 then
+      land = land + oldfree
+      freeleft = 0
+    else
+      land = land + (oldfree - freeleft) -- dont you love reverse subtraction?
+    end
+    print("Gained " .. oldland - land .. " square miles of land.") -- same here
     sleep(2)
   end
 end
