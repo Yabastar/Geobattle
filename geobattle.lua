@@ -56,8 +56,8 @@ function generateRandomCombinations(list1, list2, numCombinations)
 end
 
 -- Example usage:
-local list1 = {"Qing", "Arama", "Selic", "Yuguhion"}
-local list2 = {"Dynasty", "Kingdom", "Republic", "Union"}
+local list1 = {"Qing", "Arama", "Selic", "Yuguhion", "Mbunda", "Helvetic", "Bukhara", "Sokoto", "Bugunda", "Ptolemaic", "Khamag", "Laur", "Abbasid", "Songhi", "Johor"}
+local list2 = {"Dynasty", "Kingdom", "Republic", "Union", "Empire", "Caliphate", ""}
 local numCombinations = 5
 
 local randomCombinations = generateRandomCombinations(list1, list2, numCombinations)
