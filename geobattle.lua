@@ -56,6 +56,7 @@ function start()
     print("Attacking empty land.")
     oldfree = freeleft
     freeleft = freeleft / 2
+    land = land + (oldfree / 2)
     print("Gained " .. oldfree / 2 .. " square miles of land.")
     sleep(2)
   end
