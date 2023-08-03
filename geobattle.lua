@@ -42,15 +42,16 @@ function start()
   local chose = menuOptions[chosenOption]
   if chose == "Next round" then
     if land * 15 < troops then
-      -- nothing
+      print("gained 0 troops (max)")
     else
+      print("gained " .. troops + (land * 5) .. " troops")
       troops = troops + (land * 5)
     end
     sleep(2)
   elseif chose == "Stats" then
     print("Troop count: " .. troops)
     print("Square miles of land: " .. land)
-    print("Max troops: " .. land * 15)
+    print("Max troops (estimate): " .. land * 15)
     print("Empty land left: " .. freeleft)
     sleep(2)
   elseif chose == "Battle" then
