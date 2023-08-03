@@ -58,7 +58,7 @@ function start()
     print("Attacking empty land.")
     oldland = land
     oldfree = freeleft
-    freeleft = freeleft - (troops / 2)
+    freeleft = freeleft - (troops / 4)
     if freeleft < 0 then
       land = land + oldfree
       freeleft = 0
