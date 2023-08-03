@@ -56,6 +56,7 @@ function start()
     freeleft = freeleft / 2
     print("Gained " .. oldfree / 2 .. " square miles of land.")
   end
+  sleep(2)
 end
 
 while true do
