@@ -55,7 +55,9 @@ function start()
   elseif chose == "Battle" then
     print("Attacking empty land.")
     freeleft = freeleft / 2
+    print(land)
     land = land + freeleft
+    print(land)
     print("Gained " .. freeleft .. " square miles of land.")
     sleep(2)
   end
