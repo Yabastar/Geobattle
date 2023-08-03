@@ -31,11 +31,12 @@ function displayMenu(options)
   return choice
 end
 
+freeland = math.random(10,100)
+freeleft = freeland
+troops = 90
+land = 6
+
 function start()
-  freeland = math.random(10,100)
-  freeleft = freeland
-  troops = 90
-  land = 6
   local menuOptions = {"Next round", "Stats", "Battle"}
   local chosenOption = displayMenu(menuOptions)
   local chose = menuOptions[chosenOption]
