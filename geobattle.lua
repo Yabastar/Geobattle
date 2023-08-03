@@ -65,7 +65,7 @@ function start()
     else
       land = land + (oldfree - freeleft) -- dont you love reverse subtraction?
     end
-    print("Gained " .. oldland - land .. " square miles of land.") -- same here
+    print("Gained " .. math.abs(oldland - land) .. " square miles of land.") -- could have probably simplified this
     sleep(2)
   end
 end
